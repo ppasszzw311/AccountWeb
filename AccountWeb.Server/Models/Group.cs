@@ -2,7 +2,7 @@
 
 namespace AccountWeb.Server.Models;
 
-public class Group : BaseEntity
+public class Group : BaseEntityWithTime
 {
     [Required]
     [StringLength(100)]
@@ -10,4 +10,8 @@ public class Group : BaseEntity
     public int ProjectId { get; set; }
     [StringLength(255)]
     public string? Description { get; set; }
+
+    // Navigation properties
+    public Project Project { get; set; } = null!;
+    public ICollection<UserGroupMapping> UserGroupMappings { get; set; } = new List<UserGroupMapping>();
 }

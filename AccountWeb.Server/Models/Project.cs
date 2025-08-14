@@ -2,7 +2,7 @@
 
 namespace AccountWeb.Server.Models;
 
-public class Project : BaseEntity
+public class Project : BaseEntityWithTime
 {
     [Required]
     [StringLength(50)]
@@ -19,4 +19,9 @@ public class Project : BaseEntity
     public int FactoryId { get; set; }
     public string? Role { get; set; }
 
+    // Navigation properties
+    public Factory Factory { get; set; } = null!;
+    public ICollection<Group> Groups { get; set; } = new List<Group>();
+    public ICollection<Account> Accounts { get; set; } = new List<Account>();
+    public ICollection<ProjectMember> ProjectMembers { get; set; } = new List<ProjectMember>();
 }

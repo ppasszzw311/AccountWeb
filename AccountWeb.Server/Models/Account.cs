@@ -2,7 +2,7 @@
 
 namespace AccountWeb.Server.Models;
 
-public class Account: BaseEntity
+public class Account: BaseEntityWithTime
 {
     [Required]
     [StringLength(100)]
@@ -17,5 +17,10 @@ public class Account: BaseEntity
     public int? Port { get; set; }
     [StringLength(500)]
     public string? Description { get; set; }
+
+    // Navigation properties
+    public Project Project { get; set; } = null!;
+    public DomainTypes DomainType { get; set; } = null!;
+    public ICollection<AccountActionRecord> AccountActionRecords = new List<AccountActionRecord>();
 
 }
