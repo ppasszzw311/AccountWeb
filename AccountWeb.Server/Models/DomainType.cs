@@ -2,7 +2,7 @@
 
 namespace AccountWeb.Server.Models;
 
-public class DomainTypes: BaseEntityWithTime
+public class DomainType: BaseEntityWithTime
 {
     public int CategoryId { get; set; } // Foreign key to DomainCategory
     [Required]

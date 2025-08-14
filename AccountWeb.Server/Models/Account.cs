@@ -20,7 +20,7 @@ public class Account: BaseEntityWithTime
 
     // Navigation properties
     public Project Project { get; set; } = null!;
-    public DomainTypes DomainType { get; set; } = null!;
+    public DomainType DomainType { get; set; } = null!;
     public ICollection<AccountActionRecord> AccountActionRecords = new List<AccountActionRecord>();
 
 }
