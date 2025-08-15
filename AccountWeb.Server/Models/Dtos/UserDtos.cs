@@ -31,3 +31,22 @@ public class CreateUserRequest
     [Required]
     public required string Email { get; set; }
 }
+
+public class UpdateUserRequest
+{
+    [Required]
+    public required string UserId { get; set; }
+    [Required]
+    public required string UserName { get; set; }
+    public int? FactoryId { get; set; }
+    [Required]
+    public required string Email { get; set; }
+}
+
+public class ResetPasswordRequest
+{
+    [Required]
+    public required string UserId { get; set; }
+    [Required]
+    public required string NewPassword { get; set; }
+}
